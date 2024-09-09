@@ -1,0 +1,27 @@
+.header {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  Navigation {
+    font-size: 1.2rem;
+    margin-right: 20px;
+  }
+  
+  UserMenu, AuthNav {
+    font-size: 1.2rem;
+    margin-left: 20px;
+  }
+  
+  UserMenu {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  AuthNav {
+    color: #666;
+    text-decoration: underline;
+  }

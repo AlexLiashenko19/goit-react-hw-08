@@ -1,0 +1,31 @@
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+  }
+
+  .linkActive {
+    background-color: black;
+    color: #fff;
+  }
+  
+  nav {
+    display: flex;
+    gap: 12px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1em;
+  }
+  
+  nav a:hover {
+    color: #ccc;
+  }
+  
+  nav a.active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+  }
