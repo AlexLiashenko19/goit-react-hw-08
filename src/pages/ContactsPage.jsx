@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { apiGetAllContacts } from '../redux/сontacts/operations';
+import { apiGetAllContacts } from '../redux/contacts/operations';
 import ContactForm from '../components/ContactForm/ContactForm';
 import ContactList from '../components/ContactList/ContactList';
 import SearchBar from '../components/SearchBar/SearchBar';
-import { selectorLoading } from '../redux/сontacts/selector';
+import { selectorLoading } from '../redux/contacts/selector';
 import Loader from '../components/Loader/Loader';
 
 const ContactsPage = () => {

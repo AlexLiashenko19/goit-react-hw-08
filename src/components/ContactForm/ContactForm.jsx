@@ -2,7 +2,7 @@ import { Field, Form, Formik } from "formik";
 import { ErrorMessage } from "formik";
 import css from "./ContactForm.module.css"
 import * as Yup from "yup";
-import { apiAddContact } from "../../redux/сontacts/operations";
+import { apiAddContact } from "../../redux/contacts/operations";
 import { useDispatch } from "react-redux";
 
 
