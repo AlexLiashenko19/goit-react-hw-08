@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { selectFilter } from "../../redux/filter/select";
-import { setFilterValue } from "../../redux/filter/slice";
+import { selectFilter } from "../../redux/filters/selectors";
+import { setFilterValue } from "../../redux/filters/slice";
 
 const SearchBar = () => {
 

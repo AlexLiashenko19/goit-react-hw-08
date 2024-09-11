@@ -9,6 +9,10 @@ const setAuthHeaders  = (token) => {
     instance.defaults.headers.common.Authorization =  `Bearer ${token}`
 }
 
+const clearAuthHeader = () => {
+    instance.defaults.headers.common.Authorization = null;
+  };
+
 export const apiLogin = createAsyncThunk(
     "auth/login",
     async (formData, thunkApi) => {
@@ -65,6 +69,7 @@ export const apiLogout = createAsyncThunk(
     async (_, thunkApi) => {
         try {
             await instance.post("/users/logout");
+            clearAuthHeader();
             return
         } catch (error) {
             return thunkApi.rejectWithValue(error.message)

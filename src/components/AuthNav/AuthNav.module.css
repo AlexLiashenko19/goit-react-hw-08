@@ -1,23 +1,8 @@
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: #333;
-    color: #fff;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-  
-  nav a:hover {
-    color: #ccc;
-  }
-  
-  nav a.active {
-    color: #fff;
-    border-bottom: 2px solid #fff;
-  }
+.authNav {
+  display: flex;
+  gap: 16px;
+}
+.link {
+  text-decoration: none;
+  color: #007bff;
+}

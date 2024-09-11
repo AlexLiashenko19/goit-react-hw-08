@@ -1,5 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { selectFilter } from "../filter/select";
+import { selectFilter } from "../filters/selectors";
 
 export const selectorContact = (state) => state.contacts.items
 export const selectorLoading = (state) => state.contacts.loading

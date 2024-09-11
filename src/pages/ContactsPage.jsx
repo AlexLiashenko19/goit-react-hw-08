@@ -4,7 +4,7 @@ import { apiGetAllContacts } from '../redux/contacts/operations';
 import ContactForm from '../components/ContactForm/ContactForm';
 import ContactList from '../components/ContactList/ContactList';
 import SearchBar from '../components/SearchBar/SearchBar';
-import { selectorLoading } from '../redux/contacts/selector';
+import { selectorLoading } from '../redux/contacts/selectors';
 import Loader from '../components/Loader/Loader';
 
 const ContactsPage = () => {

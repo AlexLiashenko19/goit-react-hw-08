@@ -9,11 +9,12 @@ import RestrictedRoute from './components/RestrictedRoute/RestrictedRoute';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { apiRefreshUser } from './redux/auth/operations';
-import { selectAuthIsRefreshing } from './redux/auth/selectors';
+import { selectIsRefreshing } from './redux/auth/selectors';
+import styles from "./App.module.css"
 
 const App = () => {
   const dispatch = useDispatch()
-  const isRefresh = useSelector(selectAuthIsRefreshing)
+  const isRefresh = useSelector(selectIsRefreshing)
 
   useEffect(() => {
   dispatch(apiRefreshUser())
@@ -22,16 +23,18 @@ const App = () => {
   if (isRefresh) return <p>User is refreshing, please wait</p>
 
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="register" element={<RestrictedRoute><RegistrationPage /></RestrictedRoute>} />
-          <Route path="login" element={<RestrictedRoute><LoginPage /></RestrictedRoute>} />
-          <Route path="contacts" element={<PrivateRoute><ContactsPage /></PrivateRoute>} />
-        </Route>
-      </Routes>
-    </>
+    <div className={styles.appContainer}>
+      <Layout>
+        <main className={styles.content}>
+          <Routes>
+            <Route path="/" element={<HomePage />}/>
+            <Route path="/register" element={<RestrictedRoute component={<RegistrationPage/>}/>} />
+            <Route path="/login" element={<RestrictedRoute component={<LoginPage/>}/>} />
+            <Route path="/contacts" element={<PrivateRoute component={<ContactsPage/>}/>} />
+          </Routes>
+        </main>
+      </Layout>
+    </div>
   );
 };
 

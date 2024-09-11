@@ -23,9 +23,12 @@ const INITIAL_STATE =
       state.error = null;
     })
     .addCase(apiRegister.fulfilled, (state, action) => {
-    state.isLoggedIn = true;
-    state.token = action.payload.token,
-    state.user = action.payload.user
+      state.isLoggedIn = true;
+      state.token = action.payload.token;
+      state.user = {
+        name: action.payload.user.name,
+        email: action.payload.user.email
+      };
     })
     .addCase(apiRegister.rejected, (state, action) => {
       state.error = action.payload
@@ -34,9 +37,12 @@ const INITIAL_STATE =
       state.error = null;
     })
     .addCase(apiLogin.fulfilled, (state, action) => {
-    state.isLoggedIn = true;
-    state.token = action.payload.token,
-    state.user = action.payload.user
+      state.isLoggedIn = true;
+      state.token = action.payload.token;
+      state.user = {
+        name: action.payload.user.name,
+        email: action.payload.user.email
+      };
     })
     .addCase(apiLogin.rejected, (state, action) => {
       state.error = action.payload
