@@ -20,9 +20,9 @@ const App = () => {
   dispatch(apiRefreshUser())
   }, [dispatch])
 
-  if (isRefresh) return <p>User is refreshing, please wait</p>
-
-  return (
+  return isRefresh ? (
+    <p>User is refreshing, please wait</p> ) :
+    (
     <div className={styles.appContainer}>
       <Layout>
         <main className={styles.content}>
