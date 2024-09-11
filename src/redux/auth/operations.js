@@ -10,7 +10,7 @@ const setAuthHeaders  = (token) => {
 }
 
 const clearAuthHeader = () => {
-    instance.defaults.headers.common.Authorization = null;
+    axios.defaults.headers.common.Authorization = '';
   };
 
 export const apiLogin = createAsyncThunk(
@@ -39,6 +39,19 @@ export const apiRegister = createAsyncThunk(
     }
 )
 
+export const logOut = createAsyncThunk(
+    'auth/logOut',
+    async (_, thunkAPI) => {
+      try {
+         await instance.post("/users/logout");
+        clearAuthHeader(); 
+        return; 
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+      }
+    }
+  );
+
 export const apiRefreshUser = createAsyncThunk(
     "auth/refresh",
     async (_, thunkApi) => {
@@ -60,19 +73,6 @@ export const apiRefreshUser = createAsyncThunk(
             if (token) return true;
             
             return false;
-        }
-    }
-)
-
-export const apiLogout = createAsyncThunk(
-    "auth/logout",
-    async (_, thunkApi) => {
-        try {
-            await instance.post("/users/logout");
-            clearAuthHeader();
-            return
-        } catch (error) {
-            return thunkApi.rejectWithValue(error.message)
         }
     }
 )
